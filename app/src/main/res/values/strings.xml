@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Buku Hutang</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="buku_hutang">Buku Hutang</string>
+    <string name="analisis_biaya_hutang_untuk_finansial">analisis biaya hutang untuk finansial</string>
+    <string name="tambah_pembeli">Tambah Pembeli</string>
+    <string name="update_pembeli">Update Pembeli</string>
+    <string name="btn_update">Update</string>
+    <string name="btn_tambah">Tambah</string>
+    <string name="kosong">Data tidak boleh kosong</string>
+    <string name="bayar">Bayar</string>
+    <string name="hutang">Hutang</string>
+    <string name="harga">Rp.%1$d</string>
+    <string name="lunas">Lunas</string>
+    <string name="day">%1$s hari</string>
+    <string name="jatuh_tempo">Jatuh Tempo</string>
+</resources>

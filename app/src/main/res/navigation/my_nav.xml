@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/splahScreen">
+
+    <fragment
+        android:id="@+id/splahScreen"
+        android:name="com.listview.bukuhutang.ui.fragment.SplahScreen"
+        android:label="fragment_splah_screen"
+        tools:layout="@layout/fragment_splah_screen" >
+        <action
+            android:id="@+id/action_splahScreen_to_onBoardingFragment"
+            app:destination="@id/onBoardingFragment"
+            app:popUpTo="@id/my_nav" />
+        <action
+            android:id="@+id/action_splahScreen_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/my_nav" />
+    </fragment>
+    <fragment
+        android:id="@+id/onBoardingFragment"
+        android:name="com.listview.bukuhutang.ui.fragment.OnBoardingFragment"
+        android:label="fragment_on_boarding"
+        tools:layout="@layout/fragment_on_boarding" >
+        <action
+            android:id="@+id/action_onBoardingFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/my_nav" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.listview.bukuhutang.ui.fragment.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_homePageFragment"
+            app:destination="@id/homePageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homePageFragment"
+        android:name="com.listview.bukuhutang.ui.fragment.HomePageFragment"
+        android:label="fragment_home_page"
+        tools:layout="@layout/fragment_home_page" >
+        <action
+            android:id="@+id/action_homePageFragment_to_detailHutangFragment"
+            app:destination="@id/detailHutangFragment" />
+        <action
+            android:id="@+id/action_homePageFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_homePageFragment_to_addPembeliFragment"
+            app:destination="@id/addPembeliFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addPembeliFragment"
+        android:name="com.listview.bukuhutang.ui.fragment.AddPembeliFragment"
+        android:label="add_pembeli_fragment"
+        tools:layout="@layout/fragment_add_pembeli">
+        <action
+            android:id="@+id/action_bayarFragment_to_detailHutangFragment"
+            app:destination="@id/detailHutangFragment" />
+        <action
+            android:id="@+id/action_bayarFragment_to_homePageFragment2"
+            app:destination="@id/homePageFragment" />
+        <argument
+            android:name="title"
+            app:argType="string"
+            android:defaultValue=""/>
+        <argument
+            android:name="pembeli"
+            app:argType="com.listview.bukuhutang.database.pembeli.Pembeli"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailHutangFragment"
+        android:name="com.listview.bukuhutang.ui.fragment.DetailHutangFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" >
+        <action
+            android:id="@+id/action_detailHutangFragment_to_detailBayarFragment"
+            app:destination="@id/detailBayarFragment" />
+        <action
+            android:id="@+id/action_detailHutangFragment_to_homePageFragment"
+            app:destination="@id/homePageFragment" />
+        <action
+            android:id="@+id/action_detailHutangFragment_to_bayarFragment"
+            app:destination="@id/addPembeliFragment" />
+        <argument
+            android:name="pembeli"
+            app:argType="com.listview.bukuhutang.database.pembeli.Pembeli" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailBayarFragment"
+        android:name="com.listview.bukuhutang.ui.fragment.DetailBayarFragment"
+        android:label="fragment_detail_hutang"
+        tools:layout="@layout/fragment_detail_hutang" >
+        <action
+            android:id="@+id/action_detailBayarFragment_to_detailHutangFragment"
+            app:destination="@id/detailHutangFragment" />
+        <argument
+            android:name="id"
+            app:argType="integer"
+            android:defaultValue="-1" />
+    </fragment>
+</navigation>
